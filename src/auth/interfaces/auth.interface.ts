@@ -2,7 +2,7 @@ export interface Msg {
   message: string
 }
 
-export interface csurf {
+export interface Csrf {
   csrfToken: string
 }
 
