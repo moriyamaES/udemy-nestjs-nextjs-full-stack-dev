@@ -50,8 +50,7 @@ export class AuthService {
     if (!isValid) {
       throw new ForbiddenException('Email or password incorrect');
     }
-    return this.generateJwr(user.id, user.email);
-  }
+    }
   async generateJwr(userId: number, email: string): Promise<Jwt> {
     const payload = {
       sub: userId,
