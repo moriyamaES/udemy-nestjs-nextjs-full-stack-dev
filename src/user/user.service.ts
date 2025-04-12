@@ -16,26 +16,28 @@ export class UserService {
         id: userId,
       },
       data: {
-        ...dto, 
-      },
-    });
-    delete user.hadhedPassword;
-    return user;
-  }
-  
-  async updateUser(
-    userId: number,
-    dto: UpdateUserDto,
-  ): Promise<Omit<User, 'hashedPassword'>> {
-    const user = await this.prisma.user.update({
-      where: {
-        id: userId,
-      },
-      data: {
         ...dto,
       },
     });
+    // delete (user as any).hadhedPassword
     delete user.hadhedPassword;
     return user;
   }
+
+  // async updateUser(
+  //   userId: number,
+  //   dto: UpdateUserDto,
+  // ): Promise<Omit<User, 'hadhedPassword'>> {
+  //   const user = await this.prisma.user.update({
+  //     where: {
+  //       id: userId,
+  //     },
+  //     data: {
+  //       ...dto, 
+  //     },
+  //   });
+  //   delete user.hadhedPassword;
+  //   return user;
+  // }
+  
 }
