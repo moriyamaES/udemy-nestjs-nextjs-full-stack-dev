@@ -19,8 +19,8 @@ export class UserService {
         ...dto,
       },
     });
-    // delete (user as any).hadhedPassword
-    delete user.hadhedPassword;
+    // delete user.hadhedPassword;
+    delete (user as Partial<User>).hadhedPassword;
     return user;
   }
 

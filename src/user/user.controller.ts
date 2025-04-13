@@ -6,4 +6,6 @@ import { User} from '@prisma/client'
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('user')
-export class UserController {}
+export class UserController {
+  constructor(private readonly userService: UserService) {}
+}
